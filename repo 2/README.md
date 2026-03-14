@@ -84,6 +84,8 @@ Arduino UNO board pinout (other boards may vary):
 
 <sup>Patarroyo, Jaime. (2012, July 16). [digital image]. [Retrieved from wiring.co](http://wiki.wiring.co/wiki/Connecting_Infrared_Thermometer_MLX90614_to_Wiring#Download_and_Install_I.C2.B2Cmaster_library)</sup>
 
+![image](https://user-images.githubusercontent.com/50503074/109747823-11912300-7b95-11eb-90e9-e010f6335865.png)<br>
+
 See [`hardware/pinout.md`](hardware/pinout.md) for the complete ATmega328P wiring table and [`docs/wiring.md`](docs/wiring.md) for connector and harness details.
 
 ---
