@@ -2,23 +2,6 @@
  * tire_temp_4wheel.ino
  * FSAE Tire Temperature System — ATmega328P + 4× MLX90614
  *
- * Upgrades from temperature_driver.ino:
- *  - Migrated from i2cmaster.h  →  I2C.h (Wayne Truchsess, same library as
- *    change_address.ino — now both files use the same driver)
- *  - 2 sensors → 4 sensors (FL / FR / RL / RR)
- *  - Fixed temperature constant: 273.16 → 273.15 (Stefan–Boltzmann offset)
- *  - Output stays in Celsius (MoTeC expects °C, not °F)
- *  - Added CRC-8 SMBus PEC verification on every read
- *  - Sample rate 1 Hz → 10 Hz (100 ms loop)
- *  - MCP2515 SPI CAN TX at 500 kbps, MoTeC frame format:
- *      0x600 = FL, 0x601 = FR, 0x602 = RL, 0x603 = RR
- *      Bytes 0-1: Outer (INT16 LE, ×0.02 = °C)
- *      Bytes 2-3: Mid
- *      Bytes 4-5: Inner
- *      Byte  6:   Ambient Ta  (UINT8, offset -40)
- *      Byte  7:   Status flags
- *  - Added I2C timeout (50 ms) to prevent bus lockup on sensor fault
- *
  * Wiring:
  *   PC4 (SDA) ─── 4.7kΩ ─── 3.3V
  *   PC5 (SCL) ─── 4.7kΩ ─── 3.3V
