@@ -2,14 +2,6 @@
  * change_address_v2.ino
  * MLX90614 I2C Address Change Utility — Fixed CRC-8 Implementation
  *
- * Fixes from change_address.ino:
- *  - Replaced brute-force CRC loop (0–255 guesses) with correct CRC-8
- *    SMBus calculation (polynomial 0x07, as per MLX90614 datasheet §8.4.5)
- *  - Removed erroneous 0x6F erase byte — correct erase writes 0x00/0x00
- *  - Added read-back verification after write to confirm EEPROM stored
- *  - Consistent library: uses I2C.h (same as tire_temp_4wheel.ino)
- *  - Added safety guard: refuses to write address 0x00 (broadcast addr)
- *
  * Usage:
  *  1. Connect ONE sensor at a time (default address 0x5A, or universal 0x00)
  *  2. Set NEW_ADDR below to your target address (0x5A–0x7F)
