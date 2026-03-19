@@ -106,7 +106,7 @@ Every MLX90614 ships with the default I²C address `0x5A`. Because all four sens
 1. Connect the single sensor to the Arduino (disconnect all others)
 2. Open [`firmware/change_address/change_address_v2.ino`](firmware/change_address/change_address_v2.ino)
 3. Set `#define NEW_ADDR` to the target address (e.g. `0x5B`)
-4. Upload the sketch, then open Serial Monitor at **115200 baud**
+4. Upload the sketch, then open Serial Monitor at **115200 baud** (so you can see debug messages/prompts in the Serial Monitor on your computer)
 5. When prompted, power-cycle the sensor by removing and reconnecting its VDD wire only (leave the Arduino powered)
 6. The sketch reads back the stored address to confirm — check this before moving to the next sensor
 
@@ -215,7 +215,7 @@ Full BOM with values, footprints, and suppliers: [`hardware/bom.md`](hardware/bo
 
 - [I²C Master Library](https://github.com/DSSCircuits/I2C-Master-Library) — Wayne Truchsess, Rev 5.0 (included in `firmware/lib/I2C/`)
 - Arduino IDE 1.8+ or Arduino CLI
-- avr-gcc toolchain (bundled with Arduino IDE)
+- avr-gcc toolchain (bundled with Arduino IDE or other)
 - [python-can](https://python-can.readthedocs.io/) — for `tools/can_verify.py` bench testing
 
 ---
